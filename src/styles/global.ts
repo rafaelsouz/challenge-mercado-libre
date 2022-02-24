@@ -5,7 +5,6 @@ import {
   GlobalStyleComponent
 } from 'styled-components';
 
-
 const GlobalStyles = createGlobalStyle`
   @font-face {
     font-family: 'Roboto';
@@ -13,7 +12,7 @@ const GlobalStyles = createGlobalStyle`
     font-weight: 300;
     font-display: swap;
     src: local(''),
-        url('/fonts/roboto-v29-latin-300.woff2') format('woff2'), 
+        url('/fonts/roboto-v29-latin-300.woff2') format('woff2'),
   }
 
   @font-face {
@@ -31,7 +30,7 @@ const GlobalStyles = createGlobalStyle`
     font-weight: 500;
     font-display: swap;
     src: local(''),
-        url('/fonts/roboto-v29-latin-500.woff2') format('woff2'), 
+        url('/fonts/roboto-v29-latin-500.woff2') format('woff2'),
   }
 
   * {
@@ -56,7 +55,7 @@ const GlobalStyles = createGlobalStyle`
     font-family: "Roboto, -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif";
 
   }
-  
+
   button {
     cursor: pointer;
   }
