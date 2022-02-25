@@ -1,15 +1,13 @@
-import { BrowserRouter as Router } from 'react-router-dom';
-
-import GlobalStyles from 'styles/global';
+import { BrowserRouter } from 'react-router-dom';
+import Home from 'pages/Home';
+import './sass/main.scss';
 
 import Routes from './routes';
 
 const App = () => (
-  <Router>
-    <Routes />
-
-    <GlobalStyles />
-  </Router>
+  <BrowserRouter>
+    <Home />
+  </BrowserRouter>
 );
 
 export default App;

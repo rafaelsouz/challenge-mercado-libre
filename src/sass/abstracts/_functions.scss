@@ -1,0 +1,6 @@
+@use 'sass:map';
+@import '../theme/default';
+
+@function color($color) {
+  @return map.get($colors, $color);
+}
