@@ -1,9 +1,7 @@
-import React from 'react';
-
-// import { Container } from './styles';
+import SearchHeader from 'components/SearchHeader';
 
 const Home = () => {
-  return <h1>Home</h1>;
+  return <SearchHeader />;
 };
 
 export default Home;
