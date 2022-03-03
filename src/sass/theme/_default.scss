@@ -7,29 +7,32 @@
     "radius": 0.4rem
   );
 
-  $font: (
-    "family": "Roboto, -apple-system, Helvetica Neue, Helvetica, Arial, sans-serif",
+  $font-family: Roboto, -apple-system, Helvetica Neue, Helvetica, Arial, sans-serif;
+
+  $font-weights: (
     "light": 300,
     "normal": 400,
-    "bold": 600,
-    // "sizes": {
-    //   "xsmall": 1.2rem,
-    //   "small": 1.4rem,
-    //   "medium": 1.6rem,
-    //   "large": 1.8rem,
-    //   "xlarge": 2.0rem,
-    //   "xxlarge": 2.8rem,
-    //   "huge": 5.2rem
-    // },
+    "bold": 600
+  );
+
+  $font-sizes : (
+    "xsmall": 1.2rem,
+    "small": 1.4rem,
+    "medium": 1.6rem,
+    "large": 1.8rem,
+    "xlarge": 2.0rem,
+    "xxlarge": 2.8rem,
+    "huge": 5.2rem
   );
 
   $colors: (
-    primary: #ffe600,
-    secondary: #3483fa,
-    title: #333,
-    darkGray: #666,
-    gray: #999,
-    white: #eee,
+    "primary": #ffe600,
+    "secondary": #3483fa,
+    "title": #333,
+    "darkGray": #666,
+    "gray": #999999,
+    "background": #eee,
+    "white": #fff,
   );
 
   $spacings: (
@@ -50,7 +53,9 @@
     "alwaysOnTop": 50
   );
 
-  $transition: (
-    "default": 0.3s ease-in-out,
-    "fast": 0.1s ease-in-out
-  )
+  $breakpoints: (
+    "huge": 1440px,
+    "large": 1170px,
+    "medium": 768px,
+    "small": 450px,
+  );

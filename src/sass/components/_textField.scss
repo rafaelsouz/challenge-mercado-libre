@@ -1,0 +1,27 @@
+@import '../abstracts/functions';
+
+.input-wrapper {
+  display: flex;
+  background: color("white");
+  padding: spacings("xxsmall");
+  border: none;
+}
+
+.input {
+  color: color("title");
+  padding: spacing("xxsmall");
+  font-size: fontSize("small");
+  background: transparent;
+  border: 0;
+  outline: none;
+  width: 100%;
+
+  @media screen and (min-width: breakpoint("medium")) {
+    font-size: fontSize("large");
+  }
+}
+
+.icon {
+  background-color: color("background");
+  padding: spacing("xxsmall");
+}

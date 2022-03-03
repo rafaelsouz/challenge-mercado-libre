@@ -1,7 +1,7 @@
-import SearchHeader from 'components/SearchHeader';
+import Menu from 'components/Menu';
 
 const Home = () => {
-  return <SearchHeader />;
+  return <Menu />;
 };
 
 export default Home;

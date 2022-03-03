@@ -3,16 +3,11 @@ import { InputHTMLAttributes } from 'react';
 
 export type TextFieldProps = {
   onInput?: (value: string) => void;
-  icon?: JSX.Element;
+  icon?: string;
   iconPosition?: 'left' | 'right';
 } & InputHTMLAttributes<HTMLInputElement>;
 
-const TextField = ({
-  icon,
-  iconPosition = 'left',
-  onInput,
-  ...props
-}: TextFieldProps) => {
+const TextField = ({ icon, onInput, ...props }: TextFieldProps) => {
   const [value, setValue] = useState('');
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -26,19 +21,19 @@ const TextField = ({
   };
 
   return (
-    <div>
-      {!!icon && (
-        <div>
-          <img src={icon} alt="Ícone de uma Lupa" />
-        </div>
-      )}
+    <div className="input-wrapper">
       <input
+        className="input"
         type="text"
-        iconPosition={iconPosition}
         onChange={onChange}
         value={value}
         {...props}
       />
+      {!!icon && (
+        <div className="icon">
+          <img src={icon} alt="Ícone" />
+        </div>
+      )}
     </div>
   );
 };

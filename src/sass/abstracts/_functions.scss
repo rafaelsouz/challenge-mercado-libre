@@ -4,3 +4,22 @@
 @function color($color) {
   @return map.get($colors, $color);
 }
+
+@function fontWeight($weight) {
+  @return map.get($font-weights, $weight);
+}
+
+@function fontSize($size) {
+  @return map.get($font-sizes, $size);
+}
+
+@function spacing($spacing) {
+  @return map.get($spacings, $spacing);
+}
+
+@function breakpoint($breakpoint) {
+  @return map.get($breakpoints, $breakpoint);
+}
+
+
+

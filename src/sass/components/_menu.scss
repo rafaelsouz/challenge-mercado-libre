@@ -1,0 +1,14 @@
+.menu-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: spacing("xxsmall");
+  gap: spacing("xxsmall");
+
+  background-color: color("primary");
+
+  @media screen and (min-width: breakpoint("medium")) {
+    justify-content: center;
+  }
+}
+
