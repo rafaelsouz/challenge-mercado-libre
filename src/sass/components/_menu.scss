@@ -1,14 +1,27 @@
-.menu-wrapper {
+.header-wrapper {
+  padding: spacing("xxsmall");
+  background-color: color("primary");
+}
+
+
+.header-content {
+  max-width: grid("container");
+  margin: 0 auto;
+
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: spacing("xxsmall");
-  gap: spacing("xxsmall");
 
-  background-color: color("primary");
+  gap: spacing("xxsmall");
 
   @media screen and (min-width: breakpoint("medium")) {
     justify-content: center;
   }
+}
+
+
+.logo {
+  display: flex;
+  line-height: 0;
 }
 

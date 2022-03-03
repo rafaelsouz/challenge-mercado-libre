@@ -5,20 +5,20 @@ import TextField from './TextField';
 
 const SearchHeader = () => {
   return (
-    <menu className="menu-wrapper">
-      <div>
-        <Link to="/">
-          <img src={logo} alt={`Ícone do Mercado Livre`} />
-        </Link>
-      </div>
-      <div>
+    <header className="header-wrapper">
+      <div className="header-content">
+        <div className="logo">
+          <Link to="/">
+            <img src={logo} alt={`Ícone do Mercado Livre`} />
+          </Link>
+        </div>
         <TextField
           name="Search"
           icon={searchIcon}
           placeholder="Nunca dejes de buscar"
         />
       </div>
-    </menu>
+    </header>
   );
 };
 

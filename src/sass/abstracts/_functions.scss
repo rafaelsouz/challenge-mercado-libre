@@ -21,5 +21,9 @@
   @return map.get($breakpoints, $breakpoint);
 }
 
+@function grid($variable) {
+  @return map.get($grid, $variable);
+}
+
 
 
