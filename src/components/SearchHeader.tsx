@@ -6,7 +6,7 @@ import TextField from './TextField';
 const SearchHeader = () => {
   return (
     <header className="header-wrapper">
-      <div className="header-content">
+      <menu className="menu-content">
         <div className="logo">
           <Link to="/">
             <img src={logo} alt={`Ícone do Mercado Livre`} />
@@ -17,7 +17,7 @@ const SearchHeader = () => {
           icon={searchIcon}
           placeholder="Nunca dejes de buscar"
         />
-      </div>
+      </menu>
     </header>
   );
 };
