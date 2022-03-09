@@ -1,0 +1,31 @@
+.ol-categories {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+
+.chevron-right {
+  line-height: calc(fontSize('xxlarge')/2);
+  vertical-align: middle;
+  font-size: fontSize('xxlarge');
+  margin-left: spacing('xxsmall');
+}
+
+
+.li-category {
+  display: flex;
+  color: color('gray');
+  font-size: fontSize('small');
+
+  & + & {
+    padding-left: spacing('xxsmall');
+  }
+
+  &:last-child {
+    .chevron-right{
+      display: none;
+    }
+  }
+
+}

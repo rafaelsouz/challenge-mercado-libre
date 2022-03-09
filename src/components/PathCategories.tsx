@@ -6,10 +6,11 @@ type PathCategoriesProps = {
 
 const PathCategories = ({ categories }: PathCategoriesProps) => {
   return (
-    <ol>
+    <ol className="ol-categories">
       {categories.map((category, index) => (
-        <li key={index}>
+        <li className="li-category" key={index}>
           <span>{category}</span>
+          <span className="chevron-right">&#x203A;</span>
         </li>
       ))}
     </ol>
