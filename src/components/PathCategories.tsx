@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 type PathCategoriesProps = {
   categories: string[];
 };
@@ -6,10 +8,12 @@ const PathCategories = ({ categories }: PathCategoriesProps) => {
   return (
     <ol>
       {categories.map((category, index) => (
-        <span key={index}>{category}</span>
+        <li key={index}>
+          <span>{category}</span>
+        </li>
       ))}
     </ol>
   );
 };
 
-export default PathCategories;
+export default memo(PathCategories);

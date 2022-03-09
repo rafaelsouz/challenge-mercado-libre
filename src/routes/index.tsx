@@ -1,4 +1,4 @@
-import { Route, Routes as Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Routes as Switch } from 'react-router-dom';
 
 import SearchHeader from 'components/SearchHeader';
 
@@ -7,14 +7,14 @@ import SearchResult from 'pages/SearchResult';
 
 const Routes = () => {
   return (
-    <>
+    <BrowserRouter>
       <SearchHeader />
       <Switch>
-        <Route path="/" element={Home} />
-        <Route path="/items" element={SearchResult} />
-        <Route path="/items/:id" element={SearchResult} />
+        <Route path="/" element={<Home />} />
+        <Route path="items" element={<SearchResult />} />
+        <Route path="items/:id" element={<SearchResult />} />
       </Switch>
-    </>
+    </BrowserRouter>
   );
 };
 

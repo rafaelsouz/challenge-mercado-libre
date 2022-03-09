@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom';
+
 import logo from 'assets/Logo_ML.png';
 import searchIcon from 'assets/ic_Search.png';
-import { Link } from 'react-router-dom';
+
 import TextField from './TextField';
 
 const SearchHeader = () => {
