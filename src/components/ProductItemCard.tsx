@@ -1,34 +1,38 @@
-import { Announcement } from 'services/types';
 import freeShipping from 'assets/ic_shipping.png';
-import { formatValue } from 'utils/formatValue';
 
 type ProductItemCardProps = {
-  item: Announcement;
+  image: string;
+  price: string;
+  location: string;
+  title: string;
+  freeDelivery: boolean;
 };
 
-const ProductItemCard = ({ item }: ProductItemCardProps) => {
-  const priceFormatted = formatValue(
-    item.price.amount,
-    item.price.currency,
-    item.price.decimals
-  );
-
+const ProductItemCard = ({
+  image,
+  title,
+  location,
+  price,
+  freeDelivery
+}: ProductItemCardProps) => {
   return (
     <article className="wrapper-item">
       <div className="item-image">
-        <img src={item.picture} alt={item.title} />
+        <img src={image} alt={title} />
       </div>
       <div className="info-content">
         <div className="price-location">
-          <div className="price-wrapper">
-            <h2>{priceFormatted}</h2>
-            <div>
-              <img src={freeShipping} alt="Entrega gratuita" />
-            </div>
+          <div>
+            <h2>{price}</h2>
+            {freeDelivery && (
+              <div>
+                <img src={freeShipping} alt="Entrega gratuita" />
+              </div>
+            )}
           </div>
-          <span>São Capital Federal asdasd</span>
+          <span>{location}</span>
         </div>
-        <p className="title-product">{item.title}</p>
+        <p className="title-product">{title}</p>
       </div>
     </article>
   );

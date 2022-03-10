@@ -2,6 +2,12 @@
   display: flex;
   align-items: center;
   list-style: none;
+
+  padding: spacing('xsmall') spacing('xxsmall');
+
+  @media screen and (min-width: breakpoint("large")) {
+    padding: spacing('xsmall') 0;
+  }
 }
 
 .chevron-right {

@@ -3,6 +3,10 @@
   width: 100%;
 
   gap: spacing('xxsmall');
+
+  @media screen and (min-width: breakpoint("medium")) {
+    gap: spacing('xsmall');
+  }
 }
 
 .item-image {
@@ -11,43 +15,66 @@
     width: 12rem;
     object-fit: contain;
     border-radius: 0.4rem;
+
+    @media screen and (min-width: breakpoint("medium")) {
+      height: 18rem;
+      width: 18rem;
+    }
   }
 }
 
 .price-location {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 0.4rem;
-
   justify-content: space-between;
   align-items: baseline;
+
+  @media screen and (min-width: breakpoint("medium")) {
+    flex-direction: row;
+  }
 
   span {
     color: color('gray');
     font-size: fontSize('xsmall');
 
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    max-width: 12ch;
+    @media screen and (min-width: breakpoint("medium")) {
+      font-size: fontSize('small');
+    }
   }
-}
 
-.price-wrapper {
-  display: flex;
-  gap: spacing('xxsmall');
-  align-items: center;
+  div {
+    display: flex;
+    gap: spacing('xxsmall');
+    align-items: center;
 
-  h2 {
-    font-weight: fontWeight("bold");
-    font-size: fontSize("large");
+    h2 {
+      font-weight: fontWeight("bold");
+      font-size: fontSize("large");
+
+      @media screen and (min-width: breakpoint("medium")) {
+        font-size: fontSize('xlarge');
+      }
+    }
   }
 }
 
 .info-content {
   width: 100%;
+
+  margin-top: spacing('xxsmall');
+
+  @media screen and (min-width: breakpoint("medium")) {
+    margin-top: spacing('xsmall');
+  }
 }
 
 .title-product {
   margin-top: spacing('xsmall');
+  font-size: fontSize('medium');
+
+  @media screen and (min-width: breakpoint("medium")) {
+    font-size: fontSize('large');
+    margin-top: spacing('medium');
+  }
 }

@@ -3,7 +3,6 @@
   background-color: color("primary");
 }
 
-
 .menu-content {
   max-width: grid("container");
   margin: 0 auto;
@@ -14,11 +13,10 @@
 
   gap: spacing("xsmall");
 
-  @media screen and (min-width: breakpoint("medium")) {
+  @media screen and (min-width: breakpoint("small")) {
     justify-content: center;
   }
 }
-
 
 .logo {
   display: flex;

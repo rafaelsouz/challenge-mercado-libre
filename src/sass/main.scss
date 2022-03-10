@@ -1,4 +1,6 @@
 @import "./base/global";
+@import "./theme/default";
+@import "./abstracts/functions";
 
 @import "./components/textField";
 @import "./components/searchHeader";
@@ -7,6 +9,3 @@
 
 @import "./pages/searchResult";
 
-@import "./abstracts/functions";
-
-@import "./theme/default";
