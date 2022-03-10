@@ -11,7 +11,7 @@ const SearchResult = () => {
   const [announcements, setAnnouncements] = useState<Announcements>();
 
   useEffect(() => {
-    getListItems('iphone').then(({ categories, items }) => {
+    getListItems('topline').then(({ categories, items }) => {
       setAnnouncements({ categories, items });
     });
   }, []);

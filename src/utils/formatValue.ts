@@ -6,10 +6,21 @@ const localesType: ObjectLiteral = {
   ARS: 'es-ar'
 };
 
-const formatValue = (value: number, currency: string): string =>
-  Intl.NumberFormat(localesType[currency], {
+const formatValue = (
+  value: number,
+  currency: string,
+  decimal?: number
+): string => {
+  let valueWithDecimals = value;
+
+  if (decimal) {
+    valueWithDecimals = value + decimal / 100;
+  }
+
+  return Intl.NumberFormat(localesType[currency], {
     style: 'currency',
     currency
-  }).format(value);
+  }).format(valueWithDecimals);
+};
 
 export { formatValue };

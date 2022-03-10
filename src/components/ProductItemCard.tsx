@@ -1,11 +1,18 @@
 import { Announcement } from 'services/types';
 import freeShipping from 'assets/ic_shipping.png';
+import { formatValue } from 'utils/formatValue';
 
 type ProductItemCardProps = {
   item: Announcement;
 };
 
 const ProductItemCard = ({ item }: ProductItemCardProps) => {
+  const priceFormatted = formatValue(
+    item.price.amount,
+    item.price.currency,
+    item.price.decimals
+  );
+
   return (
     <article className="wrapper-item">
       <div className="item-image">
@@ -14,7 +21,7 @@ const ProductItemCard = ({ item }: ProductItemCardProps) => {
       <div className="info-content">
         <div className="price-location">
           <div className="price-wrapper">
-            <h2>{item.price.amount}</h2>
+            <h2>{priceFormatted}</h2>
             <div>
               <img src={freeShipping} alt="Entrega gratuita" />
             </div>
