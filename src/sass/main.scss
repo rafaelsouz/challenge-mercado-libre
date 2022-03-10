@@ -1,10 +1,12 @@
-@import './base/global';
+@import "./base/global";
 
-@import './components/textField';
-@import './components/searchHeader';
-@import './components/pathCategories';
-@import './components/productItem';
+@import "./components/textField";
+@import "./components/searchHeader";
+@import "./components/pathCategories";
+@import "./components/productItemCard";
 
-@import './abstracts/functions';
+@import "./pages/searchResult";
 
-@import './theme/default';
+@import "./abstracts/functions";
+
+@import "./theme/default";

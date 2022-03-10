@@ -3,7 +3,7 @@ import { getListItems } from 'services/itemsApi';
 
 import PathCategories from 'components/PathCategories';
 import { ResponseListAnnouncement } from 'services/types';
-import ProductItem from 'components/ProductItem';
+import ProductItemCard from 'components/ProductItemCard';
 
 type Announcements = Pick<ResponseListAnnouncement, 'categories' | 'items'>;
 
@@ -22,9 +22,13 @@ const SearchResult = () => {
         <>
           <PathCategories categories={announcements.categories} />
           <br />
-          {announcements.items.map((item, index) => (
-            <ProductItem key={index} item={item} />
-          ))}
+          <ol className="list-announcements">
+            {announcements.items.map((item, index) => (
+              <li key={index}>
+                <ProductItemCard item={item} />
+              </li>
+            ))}
+          </ol>
         </>
       )}
     </div>

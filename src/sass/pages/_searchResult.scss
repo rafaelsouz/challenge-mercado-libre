@@ -1,0 +1,13 @@
+.list-announcements {
+  list-style:none;
+
+  li {
+    background-color: color('white');
+    padding: spacing("xxsmall") 0;
+
+  }
+
+  li + li {
+    margin: 1px 0;
+  }
+}

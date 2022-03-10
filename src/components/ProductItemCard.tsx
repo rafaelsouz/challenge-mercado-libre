@@ -1,11 +1,11 @@
 import { Announcement } from 'services/types';
 import freeShipping from 'assets/ic_shipping.png';
 
-type ProductItemProps = {
+type ProductItemCardProps = {
   item: Announcement;
 };
 
-const ProductItem = ({ item }: ProductItemProps) => {
+const ProductItemCard = ({ item }: ProductItemCardProps) => {
   return (
     <article className="wrapper-item">
       <div className="item-image">
@@ -27,4 +27,4 @@ const ProductItem = ({ item }: ProductItemProps) => {
   );
 };
 
-export default ProductItem;
+export default ProductItemCard;
