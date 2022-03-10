@@ -4,14 +4,12 @@
   list-style: none;
 }
 
-
 .chevron-right {
   line-height: calc(fontSize('xxlarge')/2);
   vertical-align: middle;
   font-size: fontSize('xxlarge');
   margin-left: spacing('xxsmall');
 }
-
 
 .li-category {
   display: flex;

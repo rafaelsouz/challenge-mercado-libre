@@ -1,0 +1,51 @@
+.wrapper-item {
+  display: flex;
+  width: 100%;
+
+  gap: spacing('xxsmall');
+}
+
+.item-image {
+  img {
+    height: 12rem;
+    border-radius: 0.4rem;
+  }
+}
+
+.price-location {
+  display: flex;
+  flex-direction: row;
+  gap: 0.4rem;
+
+  justify-content: space-between;
+  align-items: baseline;
+
+  span {
+    color: color('gray');
+    font-size: fontSize('xsmall');
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 12ch;
+  }
+}
+
+.price-wrapper {
+  display: flex;
+  gap: spacing('xxsmall');
+  align-items: center;
+
+  h2 {
+    font-weight: fontWeight("bold");
+    font-size: fontSize("large");
+  }
+}
+
+.info-content {
+  width: 100%;
+}
+
+.title-product {
+  margin-top: spacing('xsmall');
+}
