@@ -1,10 +1,9 @@
+import { useCategories } from 'hooks/categories';
 import { memo } from 'react';
 
-type PathCategoriesProps = {
-  categories: string[];
-};
+const PathCategories = () => {
+  const { categories } = useCategories();
 
-const PathCategories = ({ categories }: PathCategoriesProps) => {
   return (
     <ol className="ol-categories">
       {categories.map((category, index) => (

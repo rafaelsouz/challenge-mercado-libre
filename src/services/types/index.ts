@@ -9,6 +9,7 @@ export type Announcement = {
   picture: string;
   condition: string;
   free_shipping: boolean;
+  location: string;
 };
 
 export type DetailsAnnouncement = {

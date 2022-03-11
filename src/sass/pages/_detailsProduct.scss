@@ -113,8 +113,8 @@
   }
 
   @media screen and (min-width: breakpoint("medium")) {
+    padding: spacing("medium");
 
-    margin-top: spacing("medium");
 
     h2 {
       margin-top: spacing("xsmall");

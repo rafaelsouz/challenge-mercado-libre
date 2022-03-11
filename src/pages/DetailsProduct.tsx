@@ -1,3 +1,4 @@
+import PathCategories from 'components/PathCategories';
 import { useEffect, useState, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -30,32 +31,36 @@ const DetailsProduct = () => {
   }, [id]);
 
   return (
-    <>
+    <div className="container">
       {announcement && (
-        <main className="main-details">
-          <section className="info-product">
-            <img src={announcement.picture} alt={announcement.title} />
+        <>
+          <PathCategories />
+          <main className="main-details">
+            <section className="info-product">
+              <img src={announcement.picture} alt={announcement.title} />
 
-            <div>
-              <span>
-                {announcement.condition} • {announcement.sold_quantity} Vendidos
-              </span>
+              <div>
+                <span>
+                  {announcement.condition} • {announcement.sold_quantity}{' '}
+                  Vendidos
+                </span>
 
-              <h1>{announcement.title}</h1>
+                <h1>{announcement.title}</h1>
 
-              <h2>{priceFormatted}</h2>
+                <h2>{priceFormatted}</h2>
 
-              <button>Comprar</button>
-            </div>
-          </section>
+                <button>Comprar</button>
+              </div>
+            </section>
 
-          <section className="description-product">
-            <h2>Descripcíon del product</h2>
-            <p>{announcement.description}</p>
-          </section>
-        </main>
+            <section className="description-product">
+              <h2>Descripcíon del product</h2>
+              <p>{announcement.description}</p>
+            </section>
+          </main>
+        </>
       )}
-    </>
+    </div>
   );
 };
 
