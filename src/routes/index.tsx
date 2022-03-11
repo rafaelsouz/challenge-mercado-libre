@@ -4,6 +4,7 @@ import SearchHeader from 'components/SearchHeader';
 
 import Home from 'pages/Home';
 import SearchResult from 'pages/SearchResult';
+import DetailsProduct from 'pages/DetailsProduct';
 
 const Routes = () => {
   return (
@@ -11,8 +12,8 @@ const Routes = () => {
       <SearchHeader />
       <Switch>
         <Route path="/" element={<Home />} />
-        <Route path="items" element={<SearchResult />} />
-        <Route path="items/:id" element={<SearchResult />} />
+        <Route path="/items" element={<SearchResult />} />
+        <Route path="/items/:id" element={<DetailsProduct />} />
       </Switch>
     </BrowserRouter>
   );

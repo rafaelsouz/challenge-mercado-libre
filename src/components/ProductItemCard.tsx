@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import freeShipping from 'assets/ic_shipping.png';
 
 type ProductItemCardProps = {
+  id: string;
   image: string;
   price: string;
   location: string;
@@ -11,6 +12,7 @@ type ProductItemCardProps = {
 };
 
 const ProductItemCard = ({
+  id,
   image,
   title,
   location,
@@ -19,7 +21,7 @@ const ProductItemCard = ({
 }: ProductItemCardProps) => {
   return (
     <article className="wrapper-item">
-      <Link to="/">
+      <Link to={id}>
         <div className="item-image">
           <img src={image} alt={title} />
         </div>
@@ -27,7 +29,7 @@ const ProductItemCard = ({
       <div className="info-content">
         <div className="price-location">
           <div>
-            <Link to="/">
+            <Link to={id}>
               <h2>{price}</h2>
             </Link>
             {freeDelivery && (
@@ -38,7 +40,7 @@ const ProductItemCard = ({
           </div>
           <span>{location}</span>
         </div>
-        <Link to="/">
+        <Link to={id}>
           <p className="title-product">{title}</p>
         </Link>
       </div>

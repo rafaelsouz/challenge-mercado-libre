@@ -1,0 +1,17 @@
+.main-details {
+  background-color: color('white');
+}
+
+.info-product {
+  display: flex;
+  flex-direction: column;
+
+  img {
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
+.description-product {
+
+}

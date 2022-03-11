@@ -30,5 +30,5 @@ export type ResponseDetailsAnnouncement = {
     name: string;
     lastname: string;
   };
-  items: DetailsAnnouncement;
+  item: DetailsAnnouncement;
 };

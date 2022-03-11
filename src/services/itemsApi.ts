@@ -1,5 +1,5 @@
 import api from './api';
-import { ResponseListAnnouncement } from './types';
+import { ResponseListAnnouncement, ResponseDetailsAnnouncement } from './types';
 
 const getListItems = async (
   query: string
@@ -13,4 +13,16 @@ const getListItems = async (
   }
 };
 
-export { getListItems };
+const getDetailsList = async (
+  id: string
+): Promise<ResponseDetailsAnnouncement> => {
+  try {
+    const { data } = await api.get(`/items/${id}`);
+
+    return data;
+  } catch (error: any) {
+    return Promise.reject(error);
+  }
+};
+
+export { getListItems, getDetailsList };

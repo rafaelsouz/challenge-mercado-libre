@@ -15,12 +15,8 @@ const SearchResult = () => {
 
   const search = searchParams.get('search');
 
-  console.log({ search });
-
   useEffect(() => {
     if (search) {
-      console.log('entrou aqui');
-
       getListItems(search).then(({ categories, items }) => {
         setAnnouncements({ categories, items });
       });
@@ -55,6 +51,7 @@ const SearchResult = () => {
               <>
                 <li key={index}>
                   <ProductItemCard
+                    id={item.id}
                     image={item.picture}
                     price={item.priceFormatted}
                     title={item.title}
