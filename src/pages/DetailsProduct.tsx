@@ -9,6 +9,7 @@ import { formatValue } from 'utils/formatValue';
 
 const DetailsProduct = () => {
   const [announcement, setAnnouncement] = useState<DetailsAnnouncement>();
+  const [status, setStatus] = useState<'loading' | 'success'>();
 
   const priceFormatted = useMemo(() => {
     if (announcement) {
@@ -24,11 +25,17 @@ const DetailsProduct = () => {
 
   useEffect(() => {
     if (id) {
+      setStatus('loading');
       getDetailsList(id).then(({ item }) => {
         setAnnouncement(item);
+        setStatus('success');
       });
     }
   }, [id]);
+
+  if (status === 'loading') {
+    return <div className="loading">...Cargando</div>;
+  }
 
   return (
     <div className="container">

@@ -12,6 +12,7 @@ type Announcements = Pick<ResponseListAnnouncement, 'items'>;
 
 const SearchResult = () => {
   const [announcements, setAnnouncements] = useState<Announcements>();
+  const [status, setStatus] = useState<'loading' | 'success'>();
   const [searchParams] = useSearchParams();
 
   const { addCategories } = useCategories();
@@ -19,9 +20,12 @@ const SearchResult = () => {
 
   useEffect(() => {
     if (search) {
+      setStatus('loading');
       getListItems(search).then(({ categories, items }) => {
         setAnnouncements({ items });
         addCategories(categories);
+
+        setStatus('success');
       });
     }
   }, [addCategories, search]);
@@ -42,6 +46,10 @@ const SearchResult = () => {
       });
     }
   }, [announcements]);
+
+  if (status === 'loading') {
+    return <div className="loading">...Cargando</div>;
+  }
 
   return (
     <div className="container">
