@@ -5,17 +5,27 @@ import PathCategories from 'components/PathCategories';
 import { ResponseListAnnouncement } from 'services/types';
 import ProductItemCard from 'components/ProductItemCard';
 import { formatValue } from 'utils/formatValue';
+import { useSearchParams } from 'react-router-dom';
 
 type Announcements = Pick<ResponseListAnnouncement, 'categories' | 'items'>;
 
 const SearchResult = () => {
   const [announcements, setAnnouncements] = useState<Announcements>();
+  const [searchParams] = useSearchParams();
+
+  const search = searchParams.get('search');
+
+  console.log({ search });
 
   useEffect(() => {
-    getListItems('iphone').then(({ categories, items }) => {
-      setAnnouncements({ categories, items });
-    });
-  }, []);
+    if (search) {
+      console.log('entrou aqui');
+
+      getListItems(search).then(({ categories, items }) => {
+        setAnnouncements({ categories, items });
+      });
+    }
+  }, [search]);
 
   const announcementsFormatted = useMemo(() => {
     if (announcements) {

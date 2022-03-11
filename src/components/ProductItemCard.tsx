@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import freeShipping from 'assets/ic_shipping.png';
 
 type ProductItemCardProps = {
@@ -17,13 +19,17 @@ const ProductItemCard = ({
 }: ProductItemCardProps) => {
   return (
     <article className="wrapper-item">
-      <div className="item-image">
-        <img src={image} alt={title} />
-      </div>
+      <Link to="/">
+        <div className="item-image">
+          <img src={image} alt={title} />
+        </div>
+      </Link>
       <div className="info-content">
         <div className="price-location">
           <div>
-            <h2>{price}</h2>
+            <Link to="/">
+              <h2>{price}</h2>
+            </Link>
             {freeDelivery && (
               <div>
                 <img src={freeShipping} alt="Entrega gratuita" />
@@ -32,7 +38,9 @@ const ProductItemCard = ({
           </div>
           <span>{location}</span>
         </div>
-        <p className="title-product">{title}</p>
+        <Link to="/">
+          <p className="title-product">{title}</p>
+        </Link>
       </div>
     </article>
   );

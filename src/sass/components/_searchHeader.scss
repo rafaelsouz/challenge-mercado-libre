@@ -16,6 +16,10 @@
   @media screen and (min-width: breakpoint("small")) {
     justify-content: center;
   }
+
+  form {
+    width: 100%;
+  }
 }
 
 .logo {
