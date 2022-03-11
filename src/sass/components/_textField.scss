@@ -24,4 +24,12 @@
 .icon {
   background-color: color("background");
   padding: spacing("xxsmall");
+
+  button {
+    line-height: 0;
+    display: block;
+
+    border: 0;
+    background: none;
+  }
 }
