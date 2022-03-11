@@ -7,7 +7,12 @@ export type TextFieldProps = {
   icon?: string;
 } & InputHTMLAttributes<HTMLInputElement>;
 
-const TextField = ({ icon, onInputChange, ...props }: TextFieldProps) => {
+const TextField = ({
+  icon,
+  onInputChange,
+  type = 'text',
+  ...props
+}: TextFieldProps) => {
   const [value, setValue] = useState('');
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -21,7 +26,7 @@ const TextField = ({ icon, onInputChange, ...props }: TextFieldProps) => {
     <div className="input-wrapper">
       <input
         className="input"
-        type="text"
+        type={type}
         onChange={onChange}
         value={value}
         {...props}
@@ -29,7 +34,7 @@ const TextField = ({ icon, onInputChange, ...props }: TextFieldProps) => {
       {!!icon && (
         <div className="icon">
           <button>
-            <img src={icon} alt="Ícone" />
+            <img src={icon} alt="Ícone" data-testid="icon" />
           </button>
         </div>
       )}

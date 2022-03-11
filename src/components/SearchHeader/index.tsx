@@ -1,10 +1,9 @@
 import { Link } from 'react-router-dom';
-import { useSearchParams } from 'react-router-dom';
 
 import logo from 'assets/Logo_ML.png';
 import searchIcon from 'assets/ic_Search.png';
 
-import TextField from './TextField';
+import TextField from 'components/TextField';
 import { useCallback, useState } from 'react';
 
 import { useNavigate } from 'react-router-dom';
@@ -34,7 +33,11 @@ const SearchHeader = () => {
       <menu className="menu-content">
         <div className="logo">
           <Link to="/">
-            <img src={logo} alt={'Ícone do Mercado Livre'} />
+            <img
+              src={logo}
+              alt={'Ícone do Mercado Livre'}
+              data-testid="logo-ml"
+            />
           </Link>
         </div>
         <form onSubmit={handleSubmit}>

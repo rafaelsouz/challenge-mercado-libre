@@ -37,4 +37,4 @@ function useCategories(): CategoriesContextData {
   return context;
 }
 
-export { CategoriesProvider, useCategories };
+export { CategoriesProvider, useCategories, CategoriesContext };
