@@ -1,20 +1,20 @@
 import { render, screen } from '@testing-library/react';
-import { useCategories, CategoriesContext } from 'hooks/categories';
 
 import PathCategories from '.';
 
-const mockProps = ['Celular', 'iPhone'];
+jest.mock('../../hooks/categories', () => {
+  return {
+    useCategories: () => ({
+      categories: ['Celular', 'iPhone']
+    })
+  };
+});
 
-describe('<ProductItemCard />', () => {
-  it('Deve renderizar ProductItemCard', () => {
-    render(
-      <CategoriesContext.Provider
-        value={{ addCategories: jest.fn(), categories: mockProps }}
-      >
-        <PathCategories />
-      </CategoriesContext.Provider>
-    );
+describe('<PathCategories />', () => {
+  it('Deve renderizar PathCategories', () => {
+    render(<PathCategories />);
 
-    expect(screen.getByAltText('Entrega gratuita')).toBeInTheDocument();
+    expect(screen.getByText('Celular')).toBeInTheDocument();
+    expect(screen.getByText('iPhone')).toBeInTheDocument();
   });
 });

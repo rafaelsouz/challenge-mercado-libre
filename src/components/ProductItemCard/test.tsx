@@ -1,5 +1,5 @@
-import { render, screen, waitFor } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { render, screen } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
 
 import ProductItemCard from '.';
 
@@ -14,7 +14,11 @@ const mockProps = {
 
 describe('<ProductItemCard />', () => {
   it('Deve renderizar ProductItemCard', () => {
-    render(<ProductItemCard {...mockProps} />);
+    render(
+      <BrowserRouter>
+        <ProductItemCard {...mockProps} />
+      </BrowserRouter>
+    );
 
     expect(screen.getByAltText(mockProps.title)).toBeInTheDocument();
     expect(screen.getByText(mockProps.price)).toBeInTheDocument();
@@ -24,8 +28,12 @@ describe('<ProductItemCard />', () => {
   });
 
   it('Não deve renderizar ícone de entrega gratis quando freeDelivery for false', () => {
-    render(<ProductItemCard {...mockProps} freeDelivery={false} />);
+    render(
+      <BrowserRouter>
+        <ProductItemCard {...mockProps} freeDelivery={false} />
+      </BrowserRouter>
+    );
 
-    expect(screen.getByAltText('Entrega gratuita')).not.toBeInTheDocument();
+    expect(screen.queryByAltText('Entrega gratuita')).not.toBeInTheDocument();
   });
 });
